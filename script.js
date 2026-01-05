@@ -80,26 +80,29 @@ function showMenu(category) {
 
   const items = menuData.filter(item => item.kategori === category);
 
-  items.forEach(item => {
-    // Ürünleri ve fiyatları ayır (\n ile)
-    const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
-    const fiyatlar = item.fiyat ? item.fiyat.split('\n').map(f => f.trim()) : [];
+items.forEach(item => {
+  // Ürünleri ve fiyatları ayır (\n ile)
+  const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
+  const fiyatlar = item.fiyat ? item.fiyat.split('\n').map(f => f.trim()) : [];
 
-    urunler.forEach((urunAdi, index) => {
-      const fiyat = fiyatlar[index] || "";
-      const div = document.createElement("div");
-      div.className = "menu-item";
+  urunler.forEach((urunAdi, index) => {
+    const fiyat = fiyatlar[index] || "";
+    const div = document.createElement("div");
+    div.className = "menu-item";
 
-      div.innerHTML = `
-        <div class="menu-item-left">
-          <span class="menu-item-name">${urunAdi}</span>
-        </div>
-        <div class="menu-item-right">
-        
-        </div>
-      `;
+    div.innerHTML = `
+      <div class="menu-item-left">
+        <span class="menu-item-name">${urunAdi}</span>
+      </div>
+      <div class="menu-item-right">
+        ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
+      </div>
+    `;
 
-      menuContainer.appendChild(div);
+    menuContainer.appendChild(div);
+  });
+});
+
     });
   });
 }
