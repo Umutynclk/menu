@@ -31,9 +31,14 @@ fetch(SHEET_URL)
   .catch(err => console.error(err));
 
 function showCategories() {
+  backBtn.style.display = "none";
+
+  menuContainer.classList.remove("slide-in");
+  menuContainer.style.display = "none";
+
   categoriesContainer.innerHTML = "";
   categoriesContainer.style.display = "grid";
-  menuContainer.style.display = "none";
+  categoriesContainer.classList.add("fade-in");
 
   const categoryNames = [...new Set(menuData.map(item => item.kategori))];
 
@@ -56,12 +61,18 @@ function showCategories() {
 }
 
 function showMenu(category) {
+  backBtn.style.display = "inline-block";
+
+  categoriesContainer.classList.remove("fade-in");
   categoriesContainer.style.display = "none";
-  menuContainer.style.display = "block";
+
   menuContainer.innerHTML = "";
+  menuContainer.style.display = "block";
+  menuContainer.classList.add("slide-in");
 
   const title = document.createElement("h2");
   title.textContent = category;
+  title.className = "menu-title";
   menuContainer.appendChild(title);
 
   const items = menuData.filter(item => item.kategori === category);
@@ -71,7 +82,7 @@ function showMenu(category) {
     div.className = "item";
 
     div.innerHTML = `
-      <span>${item.urun}</span>
+      <span class="item-name">${item.urun}</span>
       <span class="price">${item.fiyat ? item.fiyat + "₺" : ""}</span>
     `;
 
