@@ -252,9 +252,3 @@ main {
   color: #e53935; /* kırmızı fiyat vurgusu */
 }
 
-.menu-item-price::before {
-  content: "₺";
-  margin-right: 2px;
-}
-
-
