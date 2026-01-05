@@ -29,7 +29,8 @@ fetch(SHEET_URL)
   });
 
 function showCategories() {
-  categoriesContainer.innerHTML = "";
+ <img src="${categoryImages[category] || 'images/default.jpg'}" />
+;
 
   const categoryNames = [...new Set(menuData.map(item => item.kategori))];
 
