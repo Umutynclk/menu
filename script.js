@@ -1,5 +1,20 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
+const categoryImages = {
+    "Tavuk": "images/TAVUK.jpg",
+    "Doyuran Lezzetler": "images/DOYURAN LEZEETLER.jpg",
+    "Makarna": "images/MAKARNA.jpg",
+    "Hamburger": "images/Hamburger.jpg",
+    "Aparatifler": "images/ATIŞTIRMALIK.jpg",
+    "Wrap": "images/WRAP.jpg",
+    "Tost": "images/Tost.jpg",
+    "Soğuk İçecekler": "images/SOĞUK İÇECEKLER.jpeg",
+    "Sıcak İçecekler": "images/SICAK İÇECEKLER.jpeg",
+    "MilkShake": "images/MİLKSHAKE.jpg",
+    "Kahve": "images/KAHVE.jpg",
+    "KOKTEYL": "images/KOKTEYL.jpg",
+    "Bitki Çayı": "images/BİTKİ ÇAYI.jpeg",
+  
 const categoriesContainer = document.getElementById("categories");
 const menuContainer = document.getElementById("menu");
 const backBtn = document.getElementById("backBtn");
