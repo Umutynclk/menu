@@ -52,3 +52,63 @@ main {
 .price {
   font-weight: 600;
 }
+/* FOTOĞRAFLI KATEGORİ KARTLARI */
+
+#categories {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.category-card {
+  position: relative;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.02);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2)
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.category-card h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* GERİ BUTONU */
+
+#backBtn {
+  margin: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
