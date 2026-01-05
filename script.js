@@ -1,22 +1,21 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
 const categoryImages = {
-    "Tavuk": "images/TAVUK.jpg",
-    "Doyuran Lezzetler": "images/DOYURAN LEZEETLER.jpg",
-    "Makarna": "images/MAKARNA.jpg",
-    "Hamburger": "images/Hamburger.jpg",
-    "Aparatifler": "images/ATIŞTIRMALIK.jpg",
-    "Wrap": "images/WRAP.jpg",
-    "Tost": "images/Tost.jpg",
-    "Soğuk İçecekler": "images/SOĞUK İÇECEKLER.jpeg",
-    "Sıcak İçecekler": "images/SICAK İÇECEKLER.jpeg",
-    "MilkShake": "images/MİLKSHAKE.jpg",
-    "Kahve": "images/KAHVE.jpg",
-    "KOKTEYL": "images/KOKTEYL.jpg",
-    "Bitki Çayı": "images/BİTKİ ÇAYI.jpeg",
+  "Tavuk": "images/TAVUK.jpg",
+  "Doyuran Lezzetler": "images/DOYURAN_LEZZETLER.jpg",
+  "Makarna": "images/MAKARNA.jpg",
+  "Hamburger": "images/HAMBURGER.jpg",
+  "Aparatifler": "images/ATISTIRMALIK.jpg",
+  "Wrap": "images/WRAP.jpg",
+  "Tost": "images/TOST.jpg",
+  "Soğuk İçecekler": "images/SOGUK_ICECEKLER.jpeg",
+  "Sıcak İçecekler": "images/SICAK_ICECEKLER.jpeg",
+  "MilkShake": "images/MILKSHAKE.jpg",
+  "Kahve": "images/KAHVE.jpg",
+  "Kokteyl": "images/KOKTEYL.jpg",
+  "Bitki Çayı": "images/BITKI_CAYI.jpeg"
 };
-      
-  
+
 const categoriesContainer = document.getElementById("categories");
 const menuContainer = document.getElementById("menu");
 const backBtn = document.getElementById("backBtn");
@@ -28,11 +27,13 @@ fetch(SHEET_URL)
   .then(data => {
     menuData = data;
     showCategories();
-  });
+  })
+  .catch(err => console.error(err));
 
 function showCategories() {
- <img src="${categoryImages[category] || 'images/default.jpg'}" />
-;
+  categoriesContainer.innerHTML = "";
+  categoriesContainer.style.display = "grid";
+  menuContainer.style.display = "none";
 
   const categoryNames = [...new Set(menuData.map(item => item.kategori))];
 
@@ -40,8 +41,10 @@ function showCategories() {
     const card = document.createElement("div");
     card.className = "category-card";
 
+    const imgSrc = categoryImages[category] || "images/default.jpg";
+
     card.innerHTML = `
-      <img src="https://source.unsplash.com/600x400/?food,${category}" />
+      <img src="${imgSrc}" alt="${category}">
       <div class="overlay">
         <h2>${category}</h2>
       </div>
@@ -77,6 +80,5 @@ function showMenu(category) {
 }
 
 backBtn.onclick = () => {
-  menuContainer.style.display = "none";
-  categoriesContainer.style.display = "grid";
+  showCategories();
 };
