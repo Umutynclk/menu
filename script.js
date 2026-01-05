@@ -14,7 +14,8 @@ const categoryImages = {
     "Kahve": "images/KAHVE.jpg",
     "KOKTEYL": "images/KOKTEYL.jpg",
     "Bitki Çayı": "images/BİTKİ ÇAYI.jpeg",
-    );
+};
+      
   
 const categoriesContainer = document.getElementById("categories");
 const menuContainer = document.getElementById("menu");
