@@ -95,7 +95,7 @@ function showMenu(category) {
           <span class="menu-item-name">${urunAdi}</span>
         </div>
         <div class="menu-item-right">
-          ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
+        
         </div>
       `;
 
