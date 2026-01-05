@@ -11,8 +11,8 @@ const categoryImages = {
   "Soğuk İçecekler": "images/soguk_icecekler.jpg",
   "Sıcak İçecekler": "images/sicak_icecekler.jpeg",
   "MilkShake": "images/milkshake.jpg",
-  "Kahve": "images/kahve.jpg",
-  "Kokteyl": "images/koktyl.jpg",
+  "Çay&kahve": "images/kahve.jpg",
+  "Mix&Kokteyl": "images/koktyl.jpg",
   "Bitki Çayı": "images/bitki_cayi.jpeg"
 };
 
