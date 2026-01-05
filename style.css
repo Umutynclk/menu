@@ -184,5 +184,43 @@ main {
 .price {
   font-weight: 600;
 }
+.menu-title {
+  font-size: 21px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+/* KATEGORİ İÇİ MENÜ TASARIMI */
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 12px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.menu-item-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+.menu-item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Mobilde daha ferah olsun */
+@media (max-width: 480px) {
+  .menu-item {
+    padding: 16px 14px;
+  }
+}
 
 
