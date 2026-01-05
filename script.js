@@ -9,11 +9,11 @@ const categoryImages = {
   "Wrap": "images/wrap.jpg",
   "Tost": "images/tost.jpg",
   "Soğuk İçecekler": "images/soguk_icecekler.jpg",
-  "Sıcak İçecekler": "images/sicak_icecekler.jpg",
+  "Sıcak İçecekler": "images/sicak_icecekler.jpeg",
   "MilkShake": "images/milkshake.jpg",
   "Kahve": "images/kahve.jpg",
   "Kokteyl": "images/kokteyl.jpg",
-  "Bitki Çayı": "images/bitki_cayi.jpg"
+  "Bitki Çayı": "images/bitki_cayi.jpeg"
 };
 
 const categoriesContainer = document.getElementById("categories");
