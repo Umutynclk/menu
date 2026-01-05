@@ -10,11 +10,10 @@ const categoryImages = {
   "Tost": "images/tost.jpg",
   "Soğuk İçecekler": "images/soguk_icecekler.jpg",
   "Sıcak İçecekler": "images/sicak_icecekler.jpeg",
-  "MilkShake": "images/milkshake.jpg",
+  "Serinleten Lezzetler": "images/milkshake.jpg",
   "Çay&Kahve": "images/kahve.jpg",
   "Mix&Kokteyl": "images/koktyl.jpg",
   "Bitki Çayı": "images/bitki_cayi.jpeg"
- "Serinleten Lezzetler": "images/bitki_cayi.jpeg"
 };
 
 const categoriesContainer = document.getElementById("categories");
