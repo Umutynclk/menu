@@ -222,5 +222,39 @@ main {
     padding: 16px 14px;
   }
 }
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.menu-item-left {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.menu-item-right {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e53935; /* kırmızı fiyat vurgusu */
+}
+
+.menu-item-price::before {
+  content: "₺";
+  margin-right: 2px;
+}
 
 
