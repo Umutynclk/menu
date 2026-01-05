@@ -1,19 +1,19 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
 const categoryImages = {
-  "Tavuk": "images/TAVUK.jpg",
-  "Doyuran Lezzetler": "images/DOYURAN_LEZZETLER.jpg",
-  "Makarna": "images/MAKARNA.jpg",
-  "Hamburger": "images/HAMBURGER.jpg",
-  "Aparatifler": "images/ATISTIRMALIK.jpg",
-  "Wrap": "images/WRAP.jpg",
-  "Tost": "images/TOST.jpg",
-  "Soğuk İçecekler": "images/SOGUK_ICECEKLER.jpeg",
-  "Sıcak İçecekler": "images/SICAK_ICECEKLER.jpeg",
-  "MilkShake": "images/MILKSHAKE.jpg",
-  "Kahve": "images/KAHVE.jpg",
-  "Kokteyl": "images/KOKTEYL.jpg",
-  "Bitki Çayı": "images/BITKI_CAYI.jpeg"
+ "Tavuk": "images/tavuk.jpg",
+  "Doyuran Lezzetler": "images/doyuran_lezzetler.jpg",
+  "Makarna": "images/makarna.jpg",
+  "Hamburger": "images/hamburger.jpg",
+  "Aparatifler": "images/aparatifler.jpg",
+  "Wrap": "images/wrap.jpg",
+  "Tost": "images/tost.jpg",
+  "Soğuk İçecekler": "images/soguk_icecekler.jpg",
+  "Sıcak İçecekler": "images/sicak_icecekler.jpg",
+  "MilkShake": "images/milkshake.jpg",
+  "Kahve": "images/kahve.jpg",
+  "Kokteyl": "images/kokteyl.jpg",
+  "Bitki Çayı": "images/bitki_cayi.jpg"
 };
 
 const categoriesContainer = document.getElementById("categories");
