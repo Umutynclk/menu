@@ -251,4 +251,10 @@ main {
   font-size: 0.95rem;
   color: #e53935; /* kırmızı fiyat vurgusu */
 }
+.menu-item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111; /* veya kırmızı için #e53935 */
+}
+
 
