@@ -59,7 +59,6 @@ function showCategories() {
     categoriesContainer.appendChild(card);
   });
 }
-
 function showMenu(category) {
   backBtn.style.display = "inline-block";
 
@@ -79,11 +78,15 @@ function showMenu(category) {
 
   items.forEach(item => {
     const div = document.createElement("div");
-    div.className = "item";
+    div.className = "menu-item";
 
     div.innerHTML = `
-      <span class="item-name">${item.urun}</span>
-      <span class="price">${item.fiyat ? item.fiyat + "₺" : ""}</span>
+      <div class="menu-item-left">
+        <span class="menu-item-name">${item.urun}</span>
+      </div>
+      <div class="menu-item-right">
+        ${item.fiyat ? `<span class="menu-item-price">${item.fiyat}₺</span>` : ""}
+      </div>
     `;
 
     menuContainer.appendChild(div);
