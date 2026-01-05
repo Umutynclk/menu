@@ -1,206 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alaçatı Kafe • Bistro | QR Menü</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0f1f1a;
-      --card:#162f26;
-      --gold:#d4af37;
-      --text:#f5f5f5;
-      --muted:#b5b5b5;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:linear-gradient(180deg,#0b1814,#0f1f1a);
-      color:var(--text);
-    }
-    header{padding:26px 20px 18px;text-align:center}
-    header h1{margin:0;font-size:30px;letter-spacing:3px;color:var(--gold)}
-    header span{font-size:13px;color:var(--muted);letter-spacing:2px}
-    .tabs{display:flex;gap:10px;overflow-x:auto;padding:10px 16px 18px}
-    .tab{flex:0 0 auto;padding:10px 16px;border-radius:999px;background:#1c3b30;font-size:13px;cursor:pointer;white-space:nowrap}
-    .tab.active{background:var(--gold);color:#000;font-weight:500}
-    .section{padding:0 16px 24px;display:none}
-    .section.active{display:block}
-    .category{margin-bottom:18px}
-    .category h3{color:var(--gold);margin:10px 0;font-size:18px}
-    .card{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 8px 18px rgba(0,0,0,.25)}
-    .price{color:var(--gold);font-weight:600;font-size:14px}
-    footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 16px 40px}
-  </style>
+  <meta charset="UTF-8">
+  <title>QR Menü</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>ALAÇATI</h1>
-  <span>KAFE • BİSTRO</span>
-</header>
+  <header>
+    <h1>Menümüz</h1>
+  </header>
 
-<div class="tabs">
-  <div class="tab active" onclick="showMenu('yemek',this)">Yemekler</div>
-  <div class="tab" onclick="showMenu('icecek',this)">İçecekler</div>
-</div>
+  <main id="menu">
+    <!-- Menü buraya dinamik gelecek -->
+  </main>
 
-<!-- YEMEKLER -->
-<div id="yemek" class="section active">
-
-  <div class="category">
-    <h3>Tavuk</h3>
-    <div class="card"><span>Hot Chili Soslu Tavuk</span><span class="price"></span></div>
-    <div class="card"><span>Köri Soslu Tavuk</span><span class="price"></span></div>
-    <div class="card"><span>Barbekü Soslu Tavuk</span><span class="price"></span></div>
-    <div class="card"><span>Izgara Tavuk</span><span class="price"></span></div>
-    <div class="card"><span>Soya Soslu Acılı Tavuk</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Burger</h3>
-    <div class="card"><span>BBQ Burger</span><span class="price"></span></div>
-    <div class="card"><span>Cheese Burger</span><span class="price"></span></div>
-    <div class="card"><span>Mushroom Burger</span><span class="price"></span></div>
-    <div class="card"><span>Double Et Burger</span><span class="price"></span></div>
-    <div class="card"><span>Alaçatı Deluxe Burger</span><span class="price"></span></div>
-    <div class="card"><span>Special Füme Burger</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Wrap</h3>
-    <div class="card"><span>Köfte Wrap</span><span class="price"></span></div>
-    <div class="card"><span>Sebzeli Wrap</span><span class="price"></span></div>
-    <div class="card"><span>Tavuklu Wrap</span><span class="price"></span></div>
-    <div class="card"><span>Et Wrap</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Aparatifler</h3>
-    <div class="card"><span>Mix Tabağı</span><span class="price"></span></div>
-    <div class="card"><span>Porsiyon Patates</span><span class="price"></span></div>
-    <div class="card"><span>Porsiyon Sigara Böreği</span><span class="price"></span></div>
-    <div class="card"><span>Porsiyon Sucuk Tava</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Makarna</h3>
-    <div class="card"><span>Kremalı Makarna</span><span class="price"></span></div>
-    <div class="card"><span>BBQ Soslu Makarna</span><span class="price"></span></div>
-    <div class="card"><span>Köri Soslu Makarna</span><span class="price"></span></div>
-    <div class="card"><span>Tavuklu Makarna</span><span class="price"></span></div>
-    <div class="card"><span>Spaghetti Bolognese</span><span class="price"></span></div>
-    <div class="card"><span>Fettuccine Alfredo</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Tost</h3>
-    <div class="card"><span>Kaşarlı Tost</span><span class="price"></span></div>
-    <div class="card"><span>Karışık Tost</span><span class="price"></span></div>
-    <div class="card"><span>Atom Tost</span><span class="price"></span></div>
-    <div class="card"><span>Sucuklu Tost</span><span class="price"></span></div>
-    <div class="card"><span>Sanayi Tost</span><span class="price"></span></div>
-    <div class="card"><span>Bazlama Tost</span><span class="price"></span></div>
-  </div>
-
-  <div class="category">
-    <h3>Doyuran Lezzetler</h3>
-    <div class="card"><span>Dana Kavurma</span><span class="price"></span></div>
-    <div class="card"><span>Acılı Mantarlı Sote</span><span class="price"></span></div>
-    <div class="card"><span>Izgara Bonfile</span><span class="price"></span></div>
-    <div class="card"><span>Et Sote</span><span class="price"></span></div>
-    <div class="card"><span>Bazlama Et</span><span class="price"></span></div>
-    <div class="card"><span>Bazlama Tavuk</span><span class="price"></span></div>
-    <div class="card"><span>Izgara Köfte</span><span class="price"></span></div>
-  </div>
-
-</div>
-
-<!-- İÇECEKLER -->
-<div id="icecek" class="section">
-
-  <div class="category"><h3>Soğuk İçecekler</h3>
-    <div class="card"><span>Su</span><span class="price"></span></div>
-    <div class="card"><span>Meyveli Soda</span><span class="price"></span></div>
-    <div class="card"><span>Kola</span><span class="price"></span></div>
-    <div class="card"><span>Fanta</span><span class="price"></span></div>
-    <div class="card"><span>Sprite</span><span class="price"></span></div>
-    <div class="card"><span>Ice Tea</span><span class="price"></span></div>
-    <div class="card"><span>Redbull</span><span class="price"></span></div>
-  </div>
-
-  <div class="category"><h3>Sıcak İçecekler</h3>
-    <div class="card"><span>Sıcak Çikolata</span><span class="price"></span></div>
-    <div class="card"><span>Beyaz Çikolata</span><span class="price"></span></div>
-    <div class="card"><span>Salep</span><span class="price"></span></div>
-    <div class="card"><span>Süt</span><span class="price"></span></div>
-  </div>
-
-  <div class="category"><h3>Bitki Çayları</h3>
-    <div class="card"><span>Ihlamur</span><span class="price"></span></div>
-    <div class="card"><span>Papatya</span><span class="price"></span></div>
-    <div class="card"><span>Nane Limon</span><span class="price"></span></div>
-    <div class="card"><span>Yeşil Çay</span><span class="price"></span></div>
-    <div class="card"><span>Tropical Meyve Çayı</span><span class="price"></span></div>
-    <div class="card"><span>Hibiscus</span><span class="price"></span></div>
-  </div>
-
-  <div class="category"><h3>Mixler & Kokteyller</h3>
-    <div class="card"><span>Alaçatı Kokteyl</span><span class="price"></span></div>
-    <div class="card"><span>Churchill</span><span class="price"></span></div>
-    <div class="card"><span>Kola Fındık</span><span class="price"></span></div>
-    <div class="card"><span>Redbull Fındık</span><span class="price"></span></div>
-    <div class="card"><span>Portakal Suyu Fındık</span><span class="price"></span></div>
-    <div class="card"><span>Cam Sil</span><span class="price"></span></div>
-    <div class="card"><span>Mojito</span><span class="price"></span></div>
-    <div class="card"><span>Sex on the Beach</span><span class="price"></span></div>
-  </div>
-
-  <div class="category"><h3>Çay & Kahve</h3>
-    <div class="card"><span>Çay</span><span class="price"></span></div>
-    <div class="card"><span>Fincan Çay</span><span class="price"></span></div>
-    <div class="card"><span>Oralet</span><span class="price"></span></div>
-    <div class="card"><span>Türk Kahvesi</span><span class="price"></span></div>
-    <div class="card"><span>Damla Sakızlı Türk Kahvesi</span><span class="price"></span></div>
-    <div class="card"><span>Menengiç Türk Kahvesi</span><span class="price"></span></div>
-    <div class="card"><span>Dibek Kahvesi</span><span class="price"></span></div>
-    <div class="card"><span>Filtre Kahve</span><span class="price"></span></div>
-    <div class="card"><span>Latte Macchiato</span><span class="price"></span></div>
-    <div class="card"><span>Cappuccino</span><span class="price"></span></div>
-    <div class="card"><span>Americano</span><span class="price"></span></div>
-    <div class="card"><span>Latte</span><span class="price"></span></div>
-    <div class="card"><span>Mocha</span><span class="price"></span></div>
-    <div class="card"><span>White Mocha</span><span class="price"></span></div>
-    <div class="card"><span>Redeye</span><span class="price"></span></div>
-    <div class="card"><span>Deadeye</span><span class="price"></span></div>
-  </div>
-
-  <div class="category"><h3>Serinleten Lezzetler</h3>
-    <div class="card"><span>Limonata</span><span class="price"></span></div>
-    <div class="card"><span>Frozen</span><span class="price"></span></div>
-    <div class="card"><span>Milkshake</span><span class="price"></span></div>
-    <div class="card"><span>Sıkma Portakal Suyu</span><span class="price"></span></div>
-  </div>
-
-</div>
-
-<footer>
-  * Gıda alerjiniz varsa sipariş vermeden önce bilgi isteyiniz.<br>
-  Nargile Bulunmaktadır.
-</footer>
-
-<script>
-  function showMenu(id,el){
-    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    el.classList.add('active');
-  }
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
