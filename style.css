@@ -112,3 +112,18 @@ main {
   font-size: 16px;
   cursor: pointer;
 }
+.back-btn {
+  position: sticky;
+  top: 0;
+  margin: 12px;
+  padding: 10px 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 10;
+}
+
