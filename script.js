@@ -1,7 +1,7 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
 const categoryImages = {
- "Tavuk": "images/tavuk.jpg",
+  "Tavuk": "images/tavuk.jpg",
   "Doyuran Lezzetler": "images/doyuran_lezzetler.jpg",
   "Makarna": "images/makarna.jpg",
   "Hamburger": "images/hamburger.jpg",
@@ -22,6 +22,7 @@ const backBtn = document.getElementById("backBtn");
 
 let menuData = [];
 
+// Verileri çek
 fetch(SHEET_URL)
   .then(res => res.json())
   .then(data => {
@@ -30,6 +31,7 @@ fetch(SHEET_URL)
   })
   .catch(err => console.error(err));
 
+// Kategorileri göster
 function showCategories() {
   backBtn.style.display = "none";
 
@@ -59,6 +61,8 @@ function showCategories() {
     categoriesContainer.appendChild(card);
   });
 }
+
+// Menü gösterme fonksiyonu
 function showMenu(category) {
   backBtn.style.display = "inline-block";
 
@@ -77,22 +81,30 @@ function showMenu(category) {
   const items = menuData.filter(item => item.kategori === category);
 
   items.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "menu-item";
+    // Ürünleri ve fiyatları ayır (\n ile)
+    const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
+    const fiyatlar = item.fiyat ? item.fiyat.split('\n').map(f => f.trim()) : [];
 
-    div.innerHTML = `
-      <div class="menu-item-left">
-        <span class="menu-item-name">${item.urun}</span>
-      </div>
-      <div class="menu-item-right">
-        ${item.fiyat ? `<span class="menu-item-price">${item.fiyat}₺</span>` : ""}
-      </div>
-    `;
+    urunler.forEach((urunAdi, index) => {
+      const fiyat = fiyatlar[index] || "";
+      const div = document.createElement("div");
+      div.className = "menu-item";
 
-    menuContainer.appendChild(div);
+      div.innerHTML = `
+        <div class="menu-item-left">
+          <span class="menu-item-name">${urunAdi}</span>
+        </div>
+        <div class="menu-item-right">
+          ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
+        </div>
+      `;
+
+      menuContainer.appendChild(div);
+    });
   });
 }
 
+// Geri butonu
 backBtn.onclick = () => {
   showCategories();
 };
