@@ -1,51 +1,64 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
+const categoriesContainer = document.getElementById("categories");
 const menuContainer = document.getElementById("menu");
+const backBtn = document.getElementById("backBtn");
+
+let menuData = [];
 
 fetch(SHEET_URL)
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
-    const categories = {};
-
-    data.forEach(row => {
-      if (!row.kategori || !row.urun) return;
-
-      if (!categories[row.kategori]) {
-        categories[row.kategori] = [];
-      }
-
-      categories[row.kategori].push(row);
-    });
-
-    for (const category in categories) {
-      const categoryDiv = document.createElement("div");
-      categoryDiv.className = "category";
-
-      const title = document.createElement("h2");
-      title.textContent = category;
-      categoryDiv.appendChild(title);
-
-      categories[category].forEach(item => {
-        const itemDiv = document.createElement("div");
-        itemDiv.className = "item";
-
-        const nameSpan = document.createElement("span");
-        nameSpan.textContent = item.urun;
-
-        const priceSpan = document.createElement("span");
-        priceSpan.className = "price";
-        priceSpan.textContent = item.fiyat ? item.fiyat + "₺" : "";
-
-        itemDiv.appendChild(nameSpan);
-        itemDiv.appendChild(priceSpan);
-
-        categoryDiv.appendChild(itemDiv);
-      });
-
-      menuContainer.appendChild(categoryDiv);
-    }
-  })
-  .catch(error => {
-    menuContainer.innerHTML = "Menü yüklenemedi.";
-    console.error(error);
+    menuData = data;
+    showCategories();
   });
+
+function showCategories() {
+  categoriesContainer.innerHTML = "";
+
+  const categoryNames = [...new Set(menuData.map(item => item.kategori))];
+
+  categoryNames.forEach(category => {
+    const card = document.createElement("div");
+    card.className = "category-card";
+
+    card.innerHTML = `
+      <img src="https://source.unsplash.com/600x400/?food,${category}" />
+      <div class="overlay">
+        <h2>${category}</h2>
+      </div>
+    `;
+
+    card.onclick = () => showMenu(category);
+    categoriesContainer.appendChild(card);
+  });
+}
+
+function showMenu(category) {
+  categoriesContainer.style.display = "none";
+  menuContainer.style.display = "block";
+  menuContainer.innerHTML = "";
+
+  const title = document.createElement("h2");
+  title.textContent = category;
+  menuContainer.appendChild(title);
+
+  const items = menuData.filter(item => item.kategori === category);
+
+  items.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+
+    div.innerHTML = `
+      <span>${item.urun}</span>
+      <span class="price">${item.fiyat ? item.fiyat + "₺" : ""}</span>
+    `;
+
+    menuContainer.appendChild(div);
+  });
+}
+
+backBtn.onclick = () => {
+  menuContainer.style.display = "none";
+  categoriesContainer.style.display = "grid";
+};
