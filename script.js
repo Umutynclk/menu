@@ -36,8 +36,8 @@ fetch(SHEET_URL)
 function showCategories() {
   backBtn.style.display = "none";
 
-  menuContainer.classList.remove("slide-in");
   menuContainer.style.display = "none";
+  menuContainer.classList.remove("slide-in");
 
   categoriesContainer.innerHTML = "";
   categoriesContainer.style.display = "grid";
@@ -62,11 +62,13 @@ function showCategories() {
     categoriesContainer.appendChild(card);
   });
 }
+
+// Menü göster
 function showMenu(category) {
   backBtn.style.display = "inline-block";
 
-  categoriesContainer.classList.remove("fade-in");
   categoriesContainer.style.display = "none";
+  categoriesContainer.classList.remove("fade-in");
 
   menuContainer.innerHTML = "";
   menuContainer.style.display = "block";
@@ -79,43 +81,44 @@ function showMenu(category) {
 
   const items = menuData.filter(item => item.kategori === category);
 
-  }
+  items.forEach(item => {
+    const urunler = item.urun
+      ? item.urun.split('\n').map(u => u.trim()).filter(Boolean)
+      : [];
 
-items.forEach(item => {
-  const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
-  const fiyatlar = item.fiyat
-    ? item.fiyat.split('\n').map(f => f.replace(/₺/g, '').trim())
-    : [];
-  const aciklamalar = item.aciklama
-    ? item.aciklama.split('\n').map(a => a.trim())
-    : [];
+    const fiyatlar = item.fiyat
+      ? item.fiyat.split('\n').map(f => f.replace(/₺/g, '').trim())
+      : [];
 
-  urunler.forEach((urunAdi, index) => {
-    const fiyat = fiyatlar[index] || "";
-    const aciklama = aciklamalar[index] || "";
+    const aciklamalar = item.aciklama
+      ? item.aciklama.split('\n').map(a => a.trim())
+      : [];
 
-    const div = document.createElement("div");
-    div.className = "menu-item";
+    urunler.forEach((urunAdi, index) => {
+      const fiyat = fiyatlar[index] || "";
+      const aciklama = aciklamalar[index] || "";
 
-    div.innerHTML = `
-      <div class="menu-item-main">
-        <span class="menu-item-name">${urunAdi}</span>
-        ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
-      </div>
-      ${aciklama ? `<div class="menu-item-desc">${aciklama}</div>` : ""}
-    `;
+      const div = document.createElement("div");
+      div.className = "menu-item";
 
-    // Aç / kapa
-    div.onclick = () => {
-      div.classList.toggle("open");
-    };
+      div.innerHTML = `
+        <div class="menu-item-main">
+          <span class="menu-item-name">${urunAdi}</span>
+          ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
+        </div>
+        ${aciklama ? `<div class="menu-item-desc">${aciklama}</div>` : ""}
+      `;
 
-    menuContainer.appendChild(div);
+      div.onclick = () => {
+        div.classList.toggle("open");
+      };
+
+      menuContainer.appendChild(div);
+    });
   });
-});
+}
 
 // Geri butonu
 backBtn.onclick = () => {
   showCategories();
-};
 };
