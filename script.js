@@ -79,6 +79,8 @@ function showMenu(category) {
 
   const items = menuData.filter(item => item.kategori === category);
 
+  };
+
 items.forEach(item => {
   const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
   const fiyatlar = item.fiyat
