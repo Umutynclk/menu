@@ -8,18 +8,18 @@ body {
   background: #f4f4f4;
   color: #222;
 }
-@import url('https://fonts.googleapis.com/css2?family=The+Youngest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
 header {
   background: #093331; /* koyu camgöbeği */
   text-align: center;
-  padding: 70px 20px;  /* 180px → 70px */
+  padding: 50px 18px;  /* 180px → 70px */
 }
 
 
 header h1 {
   margin: 0;
-  font-family: 'The Youngest', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 52px;        /* büyüttük */
   font-weight: 400;
   color: #ca8f53;         /* mat turuncu */
