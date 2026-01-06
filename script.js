@@ -79,32 +79,38 @@ function showMenu(category) {
 
   const items = menuData.filter(item => item.kategori === category);
 
-  items.forEach(item => {
-    // Ürünleri ve fiyatları ayır (\n ile)
-    const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
-    const fiyatlar = item.fiyat
-      ? item.fiyat.split('\n').map(f => f.replace(/₺/g, '').trim()) // baş/son ₺ sil
-      : [];
+items.forEach(item => {
+  const urunler = item.urun.split('\n').map(u => u.trim()).filter(u => u);
+  const fiyatlar = item.fiyat
+    ? item.fiyat.split('\n').map(f => f.replace(/₺/g, '').trim())
+    : [];
+  const aciklamalar = item.aciklama
+    ? item.aciklama.split('\n').map(a => a.trim())
+    : [];
 
-    urunler.forEach((urunAdi, index) => {
-      const fiyat = fiyatlar[index] || "";
-      const div = document.createElement("div");
-      div.className = "menu-item";
+  urunler.forEach((urunAdi, index) => {
+    const fiyat = fiyatlar[index] || "";
+    const aciklama = aciklamalar[index] || "";
 
-      // Fiyatı ekliyoruz
-      div.innerHTML = `
-        <div class="menu-item-left">
-          <span class="menu-item-name">${urunAdi}</span>
-        </div>
-        <div class="menu-item-right">
-          ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
-        </div>
-      `;
+    const div = document.createElement("div");
+    div.className = "menu-item";
 
-      menuContainer.appendChild(div);
-    });
+    div.innerHTML = `
+      <div class="menu-item-main">
+        <span class="menu-item-name">${urunAdi}</span>
+        ${fiyat ? `<span class="menu-item-price">${fiyat}₺</span>` : ""}
+      </div>
+      ${aciklama ? `<div class="menu-item-desc">${aciklama}</div>` : ""}
+    `;
+
+    // Aç / kapa
+    div.onclick = () => {
+      div.classList.toggle("open");
+    };
+
+    menuContainer.appendChild(div);
   });
-}
+});
 
 // Geri butonu
 backBtn.onclick = () => {
