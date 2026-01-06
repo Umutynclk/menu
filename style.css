@@ -304,6 +304,24 @@ main {
 .menu-item.open .menu-item-main::after {
   transform: rotate(90deg);
 }
+.menu-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-item-name {
+  flex: 1;
+  text-align: left;
+}
+
+.menu-item-price {
+  min-width: 70px;
+  text-align: right;
+  font-weight: 600;
+}
+
 
 
 
