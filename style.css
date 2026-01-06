@@ -262,5 +262,48 @@ main {
   font-weight: 600;
   color: #111; /* veya kırmızı için #e53935 */
 }
+/* ÜRÜN AÇIKLAMA ALANI */
+
+.menu-item {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.menu-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item-desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 6px;
+  transition: all 0.35s ease;
+}
+
+/* Açık hali */
+.menu-item.open .menu-item-desc {
+  max-height: 120px;
+  opacity: 1;
+}
+
+/* Küçük ok efekti (isteğe bağlı) */
+.menu-item-main::after {
+  content: "›";
+  font-size: 18px;
+  color: #aaa;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item.open .menu-item-main::after {
+  transform: rotate(90deg);
+}
+
 
 
