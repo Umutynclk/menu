@@ -1,7 +1,7 @@
 const SHEET_URL = "https://opensheet.elk.sh/1Hrhh7xGwlUL9-Nh_gBPJGVE4ZuLuhC56IQcCpN2kKG8/Sayfa1";
 
 const categoryImages = {
-  "Kampanya": "images/kampanya.jpeg",
+  "Bu Güne Özel Fırsat": "images/kampanya.jpeg",
   "Tavuk": "images/tavuk.jpg",
   "Doyuran Lezzetler": "images/doyuran_lezzetler.jpg",
   "Makarna": "images/makarna.jpg",
