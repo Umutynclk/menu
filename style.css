@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +10,6 @@ body {
   background: #f4f4f4;
   color: #222;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
 header {
   background: #093331; /* koyu camgöbeği */
